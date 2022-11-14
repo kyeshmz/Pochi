@@ -1,6 +1,33 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ]
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:base"],
+	"timezone": "Asia/Tokyo",
+	"enabledManagers": ["cocoapods", "pub", "asdf"],
+	"lockFileMaintenance": {
+		"enabled": true
+	},
+	"packageRules": [
+		{
+			"groupName": "firebase",
+			"matchPackagePrefixes": ["firebase"]
+		},
+		{
+			"matchUpdateTypes": ["patch", "pin"],
+			"automerge": true,
+			"platformAutomerge": true
+		},
+		{
+			"matchDepTypes": ["dependencies"],
+			"groupName": "dependencies",
+			"rangeStrategy": "pin"
+		},
+		{
+			"matchDepTypes": ["devDependencies"],
+			"groupName": "devDependencies",
+			"rangeStrategy": "pin",
+			"automerge": true
+		}
+	],
+	"baseBranches": ["main"],
+	"assignees": ["kyeshmz"]
 }
