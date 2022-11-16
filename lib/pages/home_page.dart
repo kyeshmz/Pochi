@@ -1,10 +1,9 @@
 import 'dart:developer';
 
-import 'package:cli_script/cli_script.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:macos_ui/macos_ui.dart';
-import 'package:pochi/model/service_model.dart';
+import 'package:pochi/state/network_state/network_state_controller.dart';
 import 'package:pochi/state/sidebar_controller.dart';
 
 class HomePage extends ConsumerWidget {
@@ -39,11 +38,17 @@ class HomePage extends ConsumerWidget {
       child: Center(
         child: PushButton(
           buttonSize: ButtonSize.large,
-          onPressed: () {
+          onPressed: () async {
             print('button pressed');
-            wrapMain(() async {
-              await run(test);
-            }, debug: true);
+            // wrapMain(() async {
+            //   await run(test);
+            // }, debug: true);
+
+            ref.read(networkStateProvider.notifier).getWifiInfo().then((value) {
+              print(ref.read(networkStateProvider).wifiIP.toString());
+              print(ref.read(networkStateProvider).wifiIPv6.toString());
+              print(ref.read(networkStateProvider).wifiName.toString());
+            });
           },
           child: const Text('button'),
         ),
