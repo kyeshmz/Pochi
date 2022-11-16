@@ -8,10 +8,13 @@
 
 #include <battery_plus/battery_plus_windows_plugin.h>
 #include <flutter_secure_storage_windows/flutter_secure_storage_windows_plugin.h>
+#include <network_info_plus/network_info_plus_windows_plugin.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
   BatteryPlusWindowsPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("BatteryPlusWindowsPlugin"));
   FlutterSecureStorageWindowsPluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("FlutterSecureStorageWindowsPlugin"));
+  NetworkInfoPlusWindowsPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("NetworkInfoPlusWindowsPlugin"));
 }
