@@ -11,17 +11,20 @@ jobs:
       with:
         channel: 'stable'
         cache: true
+        architecture: x64
     - run: flutter pub get
     - run: flutter test
-    # iOS Build
-    - run: flutter build ios --release --no-codesign
+      
+    # macos Build
+    - run: flutter config --enable-macos-desktop
+    - run: flutter build macos
     # 成果物アップロード
     - name: artifact upload
       uses: actions/upload-artifact@v2.2.0
       with:
         # 保存ファイル名（name.zip）
-        name: ios
+        name: macos
         # 保存するファイル
-        path: ./build/ios/
+        path: ./build/macos/
         # 保存期間（日）
         retention-days: 1
