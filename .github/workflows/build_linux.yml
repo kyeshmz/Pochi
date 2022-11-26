@@ -1,0 +1,31 @@
+name: Flutter Linux Build
+
+on: [push]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+        cache: true
+    - run: flutter pub get
+    - run: flutter test
+    - name: Flutter Linux Build
+      run: |
+        sudo apt-get update -y
+        sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+        flutter config --enable-linux-desktop
+        flutter build linux        
+    # 成果物アップロード
+    - name: artifact upload
+      uses: actions/upload-artifact@v2.2.0
+      with:
+        # 保存ファイル名（name.zip）
+        name: linux
+        # 保存するファイル
+        path: ./build/linux/
+        # 保存期間（日）
+        retention-days: 1
