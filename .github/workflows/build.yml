@@ -15,7 +15,7 @@ jobs:
     - name: Flutter Linux Build
       run: |
         sudo apt-get update -y
-        sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libblkid-dev libgtk-3-0 libblkid1 liblzma5
+        sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libblkid-dev libgtk-3-0 libblkid1 liblzma5 libsecret
         flutter config --enable-linux-desktop
         flutter build linux        
     # 成果物アップロード
