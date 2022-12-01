@@ -50,6 +50,7 @@ dependencies:
   battery_plus: 3.0.2
   network_info_plus: 3.0.1
   device_info_plus: 8.0.0
+  system_info2: 2.0.4
 
 dev_dependencies:
   flutter_test:
