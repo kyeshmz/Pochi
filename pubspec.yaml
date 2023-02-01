@@ -50,6 +50,7 @@ dependencies:
   network_info_plus: 3.0.1
   device_info_plus: 8.0.0
   system_info2: 3.0.0
+  apple_product_name: ^1.4.0
 
 dev_dependencies:
   flutter_test:
