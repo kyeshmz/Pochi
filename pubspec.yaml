@@ -40,7 +40,7 @@ dependencies:
   shared_preferences: 2.1.0
   # state
   flutter_hooks: 0.18.6
-  hooks_riverpod: 2.3.3
+  hooks_riverpod: 2.3.4
   json_annotation: 4.8.0
 
   macos_ui: 1.12.2
