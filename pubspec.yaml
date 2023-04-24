@@ -36,11 +36,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: 1.0.5
   # routing
-  go_router: 6.5.7
+  go_router: 6.5.8
   shared_preferences: 2.1.0
   # state
   flutter_hooks: 0.18.6
-  hooks_riverpod: 2.3.4
+  hooks_riverpod: 2.3.6
   json_annotation: 4.8.0
 
   macos_ui: 1.12.2
