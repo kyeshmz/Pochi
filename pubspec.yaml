@@ -46,9 +46,9 @@ dependencies:
   macos_ui: 1.12.2
   cli_script: 0.3.1
   path_provider: 2.0.14
-  battery_plus: 3.0.4
-  network_info_plus: 3.0.3
-  device_info_plus: 8.2.0
+  battery_plus: 4.0.0
+  network_info_plus: 4.0.0
+  device_info_plus: 9.0.0
   system_info2: 3.0.2
   apple_product_name: 1.4.0
 
